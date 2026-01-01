@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Game Statistics Panel",
+  "version": "1.5.0",
+  "description": "Historical analysis and statistics for color games with secure registration.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://vsglnwfrorsskbnlytus.supabase.co/*",
+    "https://jalwagameapp5.com/*",
+    "https://www.jalwagameapp5.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://jalwagameapp5.com/*",
+        "*://*.jalwagameapp5.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
